@@ -54,4 +54,507 @@
     </div>
 
     <form id="qbrForm">
-        <div class="
+        <div class="form-section active" id="sec-1">
+            <h2>Section 1: Team Information</h2>
+            <div class="grid-2">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="you@company.com">
+                </div>
+                <div class="input-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" required placeholder="John Doe">
+                </div>
+            </div>
+            <div class="grid-2">
+                <div class="input-group">
+                    <label for="dept">Department / Function</label>
+                    <input type="text" id="dept" required placeholder="e.g. Engineering">
+                </div>
+                <div class="input-group">
+                    <label for="leader">Leader</label>
+                    <input type="text" id="leader" required placeholder="Manager Name">
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="prodArea">Product Area / Business Area (Optional)</label>
+                <input type="text" id="prodArea" placeholder="e.g. Core Platform">
+            </div>
+            <div class="btn-container">
+                <button type="button" class="btn-next" onclick="nextSection(1)">Next Step →</button>
+            </div>
+        </div>
+
+        <div class="form-section" id="sec-2">
+            <h2>Section 2: What’s Going Well</h2>
+            <p style="color: #64748b; font-size: 14px; margin-top: -15px; margin-bottom: 20px;">Highlight your top 3 wins this quarter to force prioritization and visibility.</p>
+            
+            <div class="item-card">
+                <h3>Item 1</h3>
+                <div class="input-group">
+                    <label for="well_1_title">Title / Short Label</label>
+                    <input type="text" id="well_1_title" required placeholder="Brief title of win">
+                </div>
+                <div class="input-group">
+                    <label for="well_1_desc">Description (2-4 sentences max)</label>
+                    <textarea id="well_1_desc" required placeholder="What happened?"></textarea>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="well_1_impact">Primary Business Impact</label>
+                        <select id="well_1_impact" required>
+                            <option value="">Select Impact...</option>
+                            <option value="Revenue">Revenue</option>
+                            <option value="Customer Experience">Customer Experience</option>
+                            <option value="Product Delivery">Product Delivery</option>
+                            <option value="Efficiency">Efficiency</option>
+                            <option value="Market Position">Market Position</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="well_1_cross">Is cross-functional support needed?</label>
+                        <select id="well_1_cross" required>
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <h3>Item 2 (Optional)</h3>
+                <div class="input-group">
+                    <label for="well_2_title">Title / Short Label</label>
+                    <input type="text" id="well_2_title" placeholder="Brief title of win">
+                </div>
+                <div class="input-group">
+                    <label for="well_2_desc">Description</label>
+                    <textarea id="well_2_desc" placeholder="What happened?"></textarea>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="well_2_impact">Primary Business Impact</label>
+                        <select id="well_2_impact">
+                            <option value="">Select Impact...</option>
+                            <option value="Revenue">Revenue</option>
+                            <option value="Customer Experience">Customer Experience</option>
+                            <option value="Product Delivery">Product Delivery</option>
+                            <option value="Efficiency">Efficiency</option>
+                            <option value="Market Position">Market Position</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="well_2_cross">Is cross-functional support needed?</label>
+                        <select id="well_2_cross">
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <h3>Item 3 (Optional)</h3>
+                <div class="input-group">
+                    <label for="well_3_title">Title / Short Label</label>
+                    <input type="text" id="well_3_title" placeholder="Brief title of win">
+                </div>
+                <div class="input-group">
+                    <label for="well_3_desc">Description</label>
+                    <textarea id="well_3_desc" placeholder="What happened?"></textarea>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="well_3_impact">Primary Business Impact</label>
+                        <select id="well_3_impact">
+                            <option value="">Select Impact...</option>
+                            <option value="Revenue">Revenue</option>
+                            <option value="Customer Experience">Customer Experience</option>
+                            <option value="Product Delivery">Product Delivery</option>
+                            <option value="Efficiency">Efficiency</option>
+                            <option value="Market Position">Market Position</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="well_3_cross">Is cross-functional support needed?</label>
+                        <select id="well_3_cross">
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button type="button" class="btn-prev" onclick="prevSection(2)">← Back</button>
+                <button type="button" class="btn-next" onclick="nextSection(2)">Next Step →</button>
+            </div>
+        </div>
+
+        <div class="form-section" id="sec-3">
+            <h2>Section 3: What’s Not Going Well (Up to 3 Issues)</h2>
+            <p style="color: #64748b; font-size: 14px; margin-top: -15px; margin-bottom: 20px;">Map out blockers specifically. Avoid general statements to make these issues actionable.</p>
+            
+            <div class="item-card">
+                <h3>Issue 1</h3>
+                <div class="input-group">
+                    <label for="notwell_1_title">Short Issue Title</label>
+                    <input type="text" id="notwell_1_title" required placeholder="e.g. Scope creep in sprint execution">
+                </div>
+                <div class="input-group">
+                    <label for="notwell_1_desc">What specifically is happening?</label>
+                    <textarea id="notwell_1_desc" required placeholder="Provide clear context..."></textarea>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="notwell_1_impact">Business Impact</label>
+                        <select id="notwell_1_impact" required>
+                            <option value="">Select Impact...</option>
+                            <option value="Revenue">Revenue</option>
+                            <option value="Customer Experience">Customer Experience</option>
+                            <option value="Product Delivery">Product Delivery</option>
+                            <option value="Efficiency">Efficiency</option>
+                            <option value="Market Position">Market Position</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="notwell_1_severity">Severity Rating</label>
+                        <select id="notwell_1_severity" required>
+                            <option value="">Select Severity...</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                            <option value="Critical">Critical</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="notwell_1_root">What is the root blocker?</label>
+                        <input type="text" id="notwell_1_root" required placeholder="e.g. Changing baseline requirements">
+                    </div>
+                    <div class="input-group">
+                        <label for="notwell_1_teams">Which teams/functions are involved?</label>
+                        <input type="text" id="notwell_1_teams" required placeholder="e.g. Product and Marketing">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="notwell_1_exec">Is executive support needed?</label>
+                    <select id="notwell_1_exec" required>
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <h3>Issue 2 (Optional)</h3>
+                <div class="input-group">
+                    <label for="notwell_2_title">Short Issue Title</label>
+                    <input type="text" id="notwell_2_title">
+                </div>
+                <div class="input-group">
+                    <label for="notwell_2_desc">What specifically is happening?</label>
+                    <textarea id="notwell_2_desc"></textarea>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="notwell_2_impact">Business Impact</label>
+                        <select id="notwell_2_impact">
+                            <option value="">Select Impact...</option>
+                            <option value="Revenue">Revenue</option>
+                            <option value="Customer Experience">Customer Experience</option>
+                            <option value="Product Delivery">Product Delivery</option>
+                            <option value="Efficiency">Efficiency</option>
+                            <option value="Market Position">Market Position</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="notwell_2_severity">Severity Rating</label>
+                        <select id="notwell_2_severity">
+                            <option value="">Select Severity...</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                            <option value="Critical">Critical</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="notwell_2_root">What is the root blocker?</label>
+                        <input type="text" id="notwell_2_root">
+                    </div>
+                    <div class="input-group">
+                        <label for="notwell_2_teams">Which teams/functions are involved?</label>
+                        <input type="text" id="notwell_2_teams">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="notwell_2_exec">Is executive support needed?</label>
+                    <select id="notwell_2_exec">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="item-card">
+                <h3>Issue 3 (Optional)</h3>
+                <div class="input-group">
+                    <label for="notwell_3_title">Short Issue Title</label>
+                    <input type="text" id="notwell_3_title">
+                </div>
+                <div class="input-group">
+                    <label for="notwell_3_desc">What specifically is happening?</label>
+                    <textarea id="notwell_3_desc"></textarea>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="notwell_3_impact">Business Impact</label>
+                        <select id="notwell_3_impact">
+                            <option value="">Select Impact...</option>
+                            <option value="Revenue">Revenue</option>
+                            <option value="Customer Experience">Customer Experience</option>
+                            <option value="Product Delivery">Product Delivery</option>
+                            <option value="Efficiency">Efficiency</option>
+                            <option value="Market Position">Market Position</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="notwell_3_severity">Severity Rating</label>
+                        <select id="notwell_3_severity">
+                            <option value="">Select Severity...</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                            <option value="Critical">Critical</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="notwell_3_root">What is the root blocker?</label>
+                        <input type="text" id="notwell_3_root">
+                    </div>
+                    <div class="input-group">
+                        <label for="notwell_3_teams">Which teams/functions are involved?</label>
+                        <input type="text" id="notwell_3_teams">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="notwell_3_exec">Is executive support needed?</label>
+                    <select id="notwell_3_exec">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button type="button" class="btn-prev" onclick="prevSection(3)">← Back</button>
+                <button type="button" class="btn-next" onclick="nextSection(3)">Next Step →</button>
+            </div>
+        </div>
+
+        <div class="form-section" id="sec-4">
+            <h2>Section 4: Where I Need Help (Up to 3 Requests)</h2>
+            <p style="color: #64748b; font-size: 14px; margin-top: -15px; margin-bottom: 20px;">Structure your requests like a tactical decision framework.</p>
+            
+            <div class="item-card">
+                <h3>Help Request 1</h3>
+                <div class="input-group">
+                    <label for="help_1_need">What help is needed? (What decision/support/resource is required?)</label>
+                    <textarea id="help_1_need" required placeholder="Be explicit..."></textarea>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="help_1_who">Who can help?</label>
+                        <input type="text" id="help_1_who" required placeholder="Person or role">
+                    </div>
+                    <div class="input-group">
+                        <label for="help_1_priority">Priority Timeline</label>
+                        <select id="help_1_priority" required>
+                            <option value="">Select Priority...</option>
+                            <option value="This quarter">This quarter</option>
+                            <option value="Next quarter">Next quarter</option>
+                            <option value="Future consideration">Future consideration</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="help_1_risk">What happens if left unresolved?</label>
+                    <input type="text" id="help_1_risk" required placeholder="Impact of inaction">
+                </div>
+            </div>
+
+            <div class="item-card">
+                <h3>Help Request 2 (Optional)</h3>
+                <div class="input-group">
+                    <label for="help_2_need">What help is needed?</label>
+                    <textarea id="help_2_need"></textarea>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="help_2_who">Who can help?</label>
+                        <input type="text" id="help_2_who">
+                    </div>
+                    <div class="input-group">
+                        <label for="help_2_priority">Priority Timeline</label>
+                        <select id="help_2_priority">
+                            <option value="">Select Priority...</option>
+                            <option value="This quarter">This quarter</option>
+                            <option value="Next quarter">Next quarter</option>
+                            <option value="Future consideration">Future consideration</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="help_2_risk">What happens if left unresolved?</label>
+                    <input type="text" id="help_2_risk">
+                </div>
+            </div>
+
+            <div class="item-card">
+                <h3>Help Request 3 (Optional)</h3>
+                <div class="input-group">
+                    <label for="help_3_need">What help is needed?</label>
+                    <textarea id="help_3_need"></textarea>
+                </div>
+                <div class="grid-2">
+                    <div class="input-group">
+                        <label for="help_3_who">Who can help?</label>
+                        <input type="text" id="help_3_who">
+                    </div>
+                    <div class="input-group">
+                        <label for="help_3_priority">Priority Timeline</label>
+                        <select id="help_3_priority">
+                            <option value="">Select Priority...</option>
+                            <option value="This quarter">This quarter</option>
+                            <option value="Next quarter">Next quarter</option>
+                            <option value="Future consideration">Future consideration</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="help_3_risk">What happens if left unresolved?</label>
+                    <input type="text" id="help_3_risk">
+                </div>
+            </div>
+
+            <div class="btn-container">
+                <button type="button" class="btn-prev" onclick="prevSection(4)">← Back</button>
+                <button type="submit" class="btn-submit">Submit Reflection</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Successfully configured with your direct Appfire Google Form Submission Endpoint
+    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfp9edTTm0nTlzsLyqgqZAo-QKel42N-tcDXZAHOQI8sVCxAA/formResponse"; 
+
+    function nextSection(currentStep) {
+        const currentFormSection = document.getElementById(`sec-${currentStep}`);
+        const inputs = currentFormSection.querySelectorAll('input[required], textarea[required], select[required]');
+        
+        for (let input of inputs) {
+            // Completely unblocks navigation by preventing the email container validation check from stalling the wizard
+            if (input.id === 'email') continue;
+            if (!input.value.trim()) {
+                alert("Please fill out all required fields before proceeding.");
+                return;
+            }
+        }
+        
+        document.getElementById(`sec-${currentStep}`).classList.remove('active');
+        document.getElementById(`sec-${currentStep + 1}`).classList.add('active');
+        
+        const steps = document.querySelectorAll('.progress-step');
+        steps[currentStep].classList.add('active');
+    }
+
+    function prevSection(currentStep) {
+        document.getElementById(`sec-${currentStep}`).classList.remove('active');
+        document.getElementById(`sec-${currentStep - 1}`).classList.add('active');
+        
+        const steps = document.querySelectorAll('.progress-step');
+        steps[currentStep - 1].classList.remove('active');
+    }
+
+    document.getElementById('qbrForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData();
+        formData.append('entry.2094676513', document.getElementById('email').value);
+        formData.append('entry.399614568', document.getElementById('name').value);
+        formData.append('entry.308617484', document.getElementById('dept').value);
+        formData.append('entry.1453823842', document.getElementById('leader').value);
+        formData.append('entry.816645961', document.getElementById('prodArea').value);
+        formData.append('entry.569233173', document.getElementById('well_1_title').value);
+        formData.append('entry.2070260268', document.getElementById('well_1_desc').value);
+        formData.append('entry.2099779622', document.getElementById('well_1_impact').value);
+        formData.append('entry.409324535', document.getElementById('well_1_cross').value);
+        formData.append('entry.1210731690', document.getElementById('well_2_title').value);
+        formData.append('entry.1282986028', document.getElementById('well_2_desc').value);
+        formData.append('entry.1391791930', document.getElementById('well_2_impact').value);
+        formData.append('entry.1997367310', document.getElementById('well_2_cross').value);
+        formData.append('entry.2051133963', document.getElementById('well_3_title').value);
+        formData.append('entry.260538642', document.getElementById('well_3_desc').value);
+        formData.append('entry.2008947710', document.getElementById('well_3_impact').value);
+        formData.append('entry.537524368', document.getElementById('well_3_cross').value);
+        formData.append('entry.885252781', document.getElementById('notwell_1_title').value);
+        formData.append('entry.505430384', document.getElementById('notwell_1_desc').value);
+        formData.append('entry.86383168', document.getElementById('notwell_1_impact').value);
+        formData.append('entry.1073997973', document.getElementById('notwell_1_root').value);
+        formData.append('entry.127936751', document.getElementById('notwell_1_teams').value);
+        formData.append('entry.2056631783', document.getElementById('notwell_1_severity').value);
+        formData.append('entry.2014238740', document.getElementById('notwell_1_exec').value);
+        formData.append('entry.635671546', document.getElementById('notwell_2_title').value);
+        formData.append('entry.1294531819', document.getElementById('notwell_2_desc').value);
+        formData.append('entry.1916602464', document.getElementById('notwell_2_impact').value);
+        formData.append('entry.777499370', document.getElementById('notwell_2_root').value);
+        formData.append('entry.1211729745', document.getElementById('notwell_2_teams').value);
+        formData.append('entry.546990283', document.getElementById('notwell_2_severity').value);
+        formData.append('entry.609382191', document.getElementById('notwell_2_exec').value);
+        formData.append('entry.1144973985', document.getElementById('notwell_3_title').value);
+        formData.append('entry.1977937144', document.getElementById('notwell_3_desc').value);
+        formData.append('entry.397988250', document.getElementById('notwell_3_impact').value);
+        formData.append('entry.94985036', document.getElementById('notwell_3_root').value);
+        formData.append('entry.1320110192', document.getElementById('notwell_3_teams').value);
+        formData.append('entry.1220628127', document.getElementById('notwell_3_severity').value);
+        formData.append('entry.544243797', document.getElementById('notwell_3_exec').value);
+        formData.append('entry.1521261029', document.getElementById('help_1_need').value);
+        formData.append('entry.660553383', document.getElementById('help_1_who').value);
+        formData.append('entry.1451340760', document.getElementById('help_1_risk').value);
+        formData.append('entry.818498642', document.getElementById('help_1_priority').value);
+        formData.append('entry.2147149545', document.getElementById('help_2_need').value);
+        formData.append('entry.384778435', document.getElementById('help_2_who').value);
+        formData.append('entry.1683379649', document.getElementById('help_2_risk').value);
+        formData.append('entry.953401989', document.getElementById('help_2_priority').value);
+        formData.append('entry.412974706', document.getElementById('help_3_need').value);
+        formData.append('entry.141555578', document.getElementById('help_3_who').value);
+        formData.append('entry.835485366', document.getElementById('help_3_risk').value);
+        formData.append('entry.486815748', document.getElementById('help_3_priority').value);
+
+        fetch(GOOGLE_FORM_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: formData
+        })
+        .then(() => {
+            alert('QBR Reflection submitted successfully inside Appfire! Thank you.');
+            window.location.reload();
+        })
+        .catch(error => alert('Submission Error: ' + error));
+    });
+</script>
+
+</body>
+</html>
