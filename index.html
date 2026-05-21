@@ -123,7 +123,7 @@
             </div>
 
             <div class="item-card">
-                <h3>Item 2</h3>
+                <h3>Item 2 (Optional)</h3>
                 <div class="input-group">
                     <label for="well_2_title">Title / Short Label</label>
                     <input type="text" id="well_2_title" placeholder="Brief title of win">
@@ -156,7 +156,7 @@
             </div>
 
             <div class="item-card">
-                <h3>Item 3</h3>
+                <h3>Item 3 (Optional)</h3>
                 <div class="input-group">
                     <label for="well_3_title">Title / Short Label</label>
                     <input type="text" id="well_3_title" placeholder="Brief title of win">
@@ -299,7 +299,6 @@
                     <label for="notwell_2_exec">Is executive support needed?</label>
                     <select id="notwell_2_exec">
                         <option value="No">No</option>
-                        <option value="Yes">Yes</option>
                     </select>
                 </div>
             </div>
@@ -352,7 +351,6 @@
                     <label for="notwell_3_exec">Is executive support needed?</label>
                     <select id="notwell_3_exec">
                         <option value="No">No</option>
-                        <option value="Yes">Yes</option>
                     </select>
                 </div>
             </div>
@@ -457,15 +455,13 @@
 </div>
 
 <script>
-    // --- PASTE YOUR GOOGLE WEB APP URL HERE ---
+    // 6. PASTE YOUR GOOGLE WEB APP URL BETWEEN THE QUOTES BELOW (NO SQUARE BRACKETS!)
     const WEB_APP_URL = https://script.google.com/a/macros/appfire.com/s/AKfycbz-Us_-91RgYRZtfAOh3O3oxGTmZfjqzzu8RssqWU1IbYAt7v975DgwtlfCHJjTjnCO/exec; 
 
- // Navigation logic
     function nextSection(currentStep) {
         const currentFormSection = document.getElementById(`sec-${currentStep}`);
-        
-        // This checks if the current section has any blank required fields
         const inputs = currentFormSection.querySelectorAll('input[required], textarea[required], select[required]');
+        
         for (let input of inputs) {
             if (!input.value.trim()) {
                 alert("Please fill out all required fields before proceeding.");
@@ -473,7 +469,6 @@
             }
         }
         
-        // Move to the next section
         document.getElementById(`sec-${currentStep}`).classList.remove('active');
         document.getElementById(`sec-${currentStep + 1}`).classList.add('active');
         
@@ -481,7 +476,14 @@
         steps[currentStep].classList.add('active');
     }
 
-    // Submission logic
+    function prevSection(currentStep) {
+        document.getElementById(`sec-${currentStep}`).classList.remove('active');
+        document.getElementById(`sec-${currentStep - 1}`).classList.add('active');
+        
+        const steps = document.querySelectorAll('.progress-step');
+        steps[currentStep - 1].classList.remove('active');
+    }
+
     document.getElementById('qbrForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -550,7 +552,7 @@
         })
         .then(() => {
             alert('QBR Reflection submitted successfully! Thank you.');
-            window.location.reload(); // Resets layout and form
+            window.location.reload();
         })
         .catch(error => alert('Submission Error: ' + error));
     });
