@@ -129,7 +129,7 @@
                     <input type="text" id="well_2_title" placeholder="Brief title of win">
                 </div>
                 <div class="input-group">
-                    <label for="well_2_desc">Description</label>
+                    <label pour="well_2_desc">Description</label>
                     <textarea id="well_2_desc" placeholder="What happened?"></textarea>
                 </div>
                 <div class="grid-2">
@@ -299,6 +299,7 @@
                     <label for="notwell_2_exec">Is executive support needed?</label>
                     <select id="notwell_2_exec">
                         <option value="No">No</option>
+                        <option value="Yes">Yes</option>
                     </select>
                 </div>
             </div>
@@ -351,6 +352,7 @@
                     <label for="notwell_3_exec">Is executive support needed?</label>
                     <select id="notwell_3_exec">
                         <option value="No">No</option>
+                        <option value="Yes">Yes</option>
                     </select>
                 </div>
             </div>
@@ -455,7 +457,7 @@
 </div>
 
 <script>
-    // 6. PASTE YOUR GOOGLE WEB APP URL BETWEEN THE QUOTES BELOW (NO SQUARE BRACKETS!)
+    // Embedded with your accurate Appfire Workspace Web App URL
     const WEB_APP_URL = "https://script.google.com/a/macros/appfire.com/s/AKfycbx-GcDqFyrx2mAYVcbvpDZ26qMZjoHchKXA6w_D_c9dxS9GVsT3P6LI6fcfzSon5hRR/exec"; 
 
     function nextSection(currentStep) {
@@ -521,42 +523,3 @@
             notwell_2_teams: document.getElementById('notwell_2_teams').value,
             notwell_2_severity: document.getElementById('notwell_2_severity').value,
             notwell_2_exec: document.getElementById('notwell_2_exec').value,
-            notwell_3_title: document.getElementById('notwell_3_title').value,
-            notwell_3_desc: document.getElementById('notwell_3_desc').value,
-            notwell_3_impact: document.getElementById('notwell_3_impact').value,
-            notwell_3_root: document.getElementById('notwell_3_root').value,
-            notwell_3_teams: document.getElementById('notwell_3_teams').value,
-            notwell_3_severity: document.getElementById('notwell_3_severity').value,
-            notwell_3_exec: document.getElementById('notwell_3_exec').value,
-            
-            help_1_need: document.getElementById('help_1_need').value,
-            help_1_who: document.getElementById('help_1_who').value,
-            help_1_risk: document.getElementById('help_1_risk').value,
-            help_1_priority: document.getElementById('help_1_priority').value,
-            help_2_need: document.getElementById('help_2_need').value,
-            help_2_who: document.getElementById('help_2_who').value,
-            help_2_risk: document.getElementById('help_2_risk').value,
-            help_2_priority: document.getElementById('help_2_priority').value,
-            help_3_need: document.getElementById('help_3_need').value,
-            help_3_who: document.getElementById('help_3_who').value,
-            help_3_risk: document.getElementById('help_3_risk').value,
-            help_3_priority: document.getElementById('help_3_priority').value
-        };
-
-        fetch(WEB_APP_URL, {
-            method: 'POST',
-            mode: 'no-cors',
-            cache: 'no-cache',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        })
-        .then(() => {
-            alert('QBR Reflection submitted successfully! Thank you.');
-            window.location.reload();
-        })
-        .catch(error => alert('Submission Error: ' + error));
-    });
-</script>
-
-</body>
-</html>
