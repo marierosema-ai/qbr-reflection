@@ -464,7 +464,7 @@
     function nextSection(currentStep) {
         // Basic frontend validation before moving forward
         const currentFormSection = document.getElementById(`sec-${currentStep}`);
-        const inputs = currentFormSection.querySelectorAll('input[required], textarea[required], select[required]');
+const inputs = currentFormSection.querySelectorAll('input[required]:not([type="hidden"]), textarea[required], select[required]');
         
         for (let input of inputs) {
             if (!input.value) {
