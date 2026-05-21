@@ -457,7 +457,7 @@
 </div>
 
 <script>
-    // Successfully configured with your direct Appfire Google Form Submission Endpoint
+    // Connected to your direct Google Form Response engine
     const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfp9edTTm0nTlzsLyqgqZAo-QKel42N-tcDXZAHOQI8sVCxAA/formResponse"; 
 
     function nextSection(currentStep) {
@@ -465,8 +465,7 @@
         const inputs = currentFormSection.querySelectorAll('input[required], textarea[required], select[required]');
         
         for (let input of inputs) {
-            // Completely unblocks navigation by preventing the email container validation check from stalling the wizard
-            if (input.id === 'email') continue;
+            if (input.id === 'email') continue; // Bypasses navigation lock
             if (!input.value.trim()) {
                 alert("Please fill out all required fields before proceeding.");
                 return;
@@ -492,7 +491,12 @@
         e.preventDefault();
         
         const formData = new FormData();
+        
+        // CRUCIAL SYSTEM ADJUSTMENT: We map the email field to BOTH slots to satisfy Google's system configuration
+        formData.append('emailAddress', document.getElementById('email').value); 
         formData.append('entry.2094676513', document.getElementById('email').value);
+        
+        // Mapping remaining questions
         formData.append('entry.399614568', document.getElementById('name').value);
         formData.append('entry.308617484', document.getElementById('dept').value);
         formData.append('entry.1453823842', document.getElementById('leader').value);
